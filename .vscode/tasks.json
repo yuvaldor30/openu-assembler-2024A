@@ -1,0 +1,46 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "gcc",
+            /*"args": [
+                "assembler.c",
+                "general.c",
+                "macro.c",
+                "firstrun.c",
+                "secondrun.c",
+                "node.c",
+                "validation.c", // Add hashtable.c to the list of source files
+                "-o",
+                "assembler"
+            ],*/
+            "args": [
+                "${workspaceFolder}/source/assembler.c",
+                "${workspaceFolder}/source/general.c",
+                "${workspaceFolder}/source/macro.c",
+                "${workspaceFolder}/source/firstrun.c",
+                "${workspaceFolder}/source/secondrun.c",
+                "${workspaceFolder}/source/node.c",
+                "${workspaceFolder}/source/validation.c", // Add hashtable.c to the list of source files
+                "-o",
+                "assembler"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Run",
+            "type": "shell",
+            /*"command": "./assembler valid1 valid2 valid3 valid4 error1 error2",*/
+            "command": "./assembler error1",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ]
+}
